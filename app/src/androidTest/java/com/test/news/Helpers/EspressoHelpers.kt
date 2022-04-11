@@ -1,6 +1,7 @@
 package com.test.news.Helpers
 
 import android.content.Context
+import android.util.Log
 import androidx.test.espresso.AmbiguousViewMatcherException
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -8,6 +9,8 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiSelector
+import junit.framework.Assert.assertFalse
+import junit.framework.Assert.assertTrue
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -62,16 +65,18 @@ object HelperMatchers {
         waitFor(viewId)
         onView(withId(viewId)).check(matches(hasErrorText(text)))
     }
+
     private fun checkViewExistWithId(viewId: Int) {
         try {
             onView(withId(viewId)).check(matches(isDisplayed()))
         }
         catch (multipleViewsError: AmbiguousViewMatcherException) {
+            assertTrue("Multiple news widgets not displayed on news feed", true)
             onView(firstViewOf(allOf(withId(viewId)))).check(matches(isDisplayed()))
         }
     }
 
-//    Below function created to perform click action on Recycler View how ever it is running into build errors hence commented
+//  Below function created to perform click action on Recycler View how ever it is running into build errors as it requires adding a new dependency hence commented
     fun clickOnImageView(position: Int, viewId: Int) {
 //        onView(withId(viewId))
 //            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(position,click()))
@@ -109,4 +114,3 @@ object HelperMatchers {
         }
     }
 }
-

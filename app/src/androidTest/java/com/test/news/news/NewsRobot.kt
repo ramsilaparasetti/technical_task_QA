@@ -15,6 +15,7 @@ import com.test.news.news.NewsElements.USER_NAME_ERROR_TEXT
 import com.test.news.news.NewsElements.VALID_USER_NAME
 import com.test.news.news.NewsElements.VALID_USER_PASSWORD
 import com.test.news.news.NewsElements.loginButton
+import com.test.news.news.NewsElements.newsFeed
 import com.test.news.news.NewsElements.newsImageWidget
 import com.test.news.news.NewsElements.newsLogo
 import com.test.news.news.NewsElements.newsLogoText
@@ -26,9 +27,9 @@ class NewsRobot {
     private val NEWS_APP = "News"
     private val FAILED_LOAD_NEWS_TEXT = "Failed to load news"
 
-    fun checkLoginScreen(screenValidation: Boolean = true) = apply {
+    fun checkLoginScreen(entireScreenValidation: Boolean = true) = apply {
         assertDisplayed(newsLogo, newsLogoText)
-        if (screenValidation) {
+        if (entireScreenValidation) {
             assertDisplayed(userNameField)
             assertDisplayed(passWordField)
             assertDisplayed(loginButton)
@@ -44,7 +45,7 @@ class NewsRobot {
     }
 
     fun checkUserNavigatedToNewsScreen() = apply {
-        assertDisplayed(newsLogoText)
+        assertDisplayed(newsFeed)
     }
 
     fun checkNewsImagesDisplayed() = apply {

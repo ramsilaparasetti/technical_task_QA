@@ -8,6 +8,7 @@ object NewsElements {
     const val passWordField = R.id.editTextPassword
     const val loginButton = R.id.buttonLogin
     const val newsImageWidget = R.id.recyclerViewImageWidget
+    const val newsFeed = R.id.recyclerViewNews
     const val newsLogoText = "News"
     const val VALID_USER_NAME = "user1"
     const val VALID_USER_PASSWORD = "password"

@@ -71,7 +71,7 @@ class xLoginInstrumentedTest {
     @Test
     fun userOpensAppNextTime_PreviouslyLoggedIn() {
         NewsRobot()
-            .checkLoginScreen(screenValidation = false)
+            .checkLoginScreen(entireScreenValidation = false)
             .enterValidUserName()
             .enterValidPassWord()
             .clickLoginButton()
@@ -96,7 +96,7 @@ class xLoginInstrumentedTest {
     fun newsImagesLoaded_With_InternetOn() {
         toggleDeviceInternet(internetON = true)
         NewsRobot()
-            .checkLoginScreen(screenValidation = false)
+            .checkLoginScreen(entireScreenValidation = false)
             .enterValidUserName()
             .enterValidPassWord()
             .clickLoginButton()
@@ -113,7 +113,7 @@ class xLoginInstrumentedTest {
     fun newsImagesFailedToLoad_With_InternetOff() {
         toggleDeviceInternet(internetON = false)
         NewsRobot()
-            .checkLoginScreen(screenValidation = false)
+            .checkLoginScreen(entireScreenValidation = false)
             .enterValidUserName()
             .enterValidPassWord()
             .clickLoginButton()
@@ -130,7 +130,7 @@ class xLoginInstrumentedTest {
     @Test
     fun newsImagesAreNavigatedToBrowser_WhenClicked() {
         NewsRobot()
-            .checkLoginScreen(screenValidation = false)
+            .checkLoginScreen(entireScreenValidation = false)
             .enterValidUserName()
             .enterValidPassWord()
             .clickLoginButton()
