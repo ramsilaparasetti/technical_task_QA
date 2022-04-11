@@ -7,7 +7,7 @@ import com.test.news.news.NewsRobot
 import org.junit.Rule
 import org.junit.Test
 
-class xLoginInstrumentedTest {
+class NewsInstrumentedTests {
 
     @get:Rule
     var activityTestRule = ActivityTestRule<LoginActivity>(LoginActivity::class.java)
