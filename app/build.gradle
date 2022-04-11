@@ -49,6 +49,7 @@ dependencies {
     implementation deps.room.rxjava2
     implementation deps.glide.runtime
     implementation deps.glide.okhttp_integration
+    implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
     debugImplementation deps.leakcanary.debug
 
